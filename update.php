@@ -18,11 +18,7 @@ if (!$user) {
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $user = updateUser($_POST,$userId);
-
-    if(isset($_FILES['picture'])){
         uploadFile($_FILES['picture'],$user);
-
-    }
     header("location: index.php");
 
 }
@@ -30,16 +26,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
 ?>
-
-<div class="container">
-    <div class="card">
-        <div class="card-header">
-            <h3>update user <b><?php echo $user['name']; ?></b></h3>
-        </div>
-        <div class="card-body">
-            <?php include '_form.php'; ?>
-        </div>
-    </div>
-</div>
+<?php include "_form.php"; ?>
 
 <?php include 'partials/footer.php'; ?>

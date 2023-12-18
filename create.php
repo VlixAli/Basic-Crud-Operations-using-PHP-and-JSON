@@ -4,6 +4,7 @@ include 'partials/header.php';
 
 require_once 'users/users.php';
 $user = [
+    'id'=>'',
     'name'=> '',
     'username' =>'',
     'email' => '',
@@ -11,15 +12,32 @@ $user = [
     'website'=>''
 ];
 
+$errors = [
+    'name' => "",
+    'username' => "",
+    'email' => "",
+    'phone' => "",
+    'website' => ""
+];
+
+$isValid = true;
+
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user = createUser($_POST);
+    $user =  array_merge($user, $_POST);
 
-    if (isset($_FILES['picture'])) {
-        uploadFile($_FILES['picture'], $user);
+    $isValid = validateUser($user,$errors);
 
+    if($isValid){
+        $user = createUser($_POST);
+
+        if (isset($_FILES['picture'])) {
+            uploadFile($_FILES['picture'], $user);
+
+        }
+        header("location: index.php");
     }
-    header("location: index.php");
+
 }
 
 

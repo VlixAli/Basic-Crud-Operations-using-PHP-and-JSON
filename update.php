@@ -16,10 +16,23 @@ if (!$user) {
     exit;
 }
 
+$errors = [
+    'name' => "",
+    'username' => "",
+    'email' => "",
+    'phone' => "",
+    'website' => ""
+];
+
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $user = updateUser($_POST,$userId);
-        uploadFile($_FILES['picture'],$user);
-    header("location: index.php");
+    $user =  array_merge($user, $_POST);
+    $isValid = validateUser($user,$errors);
+
+    if($isValid) {
+        $user = updateUser($_POST,$userId);
+        uploadFile($_FILES['picture'], $user);
+        header("location: index.php");
+    }
 
 }
 

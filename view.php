@@ -27,7 +27,10 @@ if(!$user){
         </div>
         <div class="body">
             <a class="btn btn-secondary" href="update.php?id=<?php echo $user['id']?>">Update</a>
-            <a class="btn btn-danger" href="delete.php?id=<?php echo $user['id']?>">Delete</a>
+            <form  style="display: inline-block" action="delete.php" method="post">
+                <input type="hidden" name="id" value="<?php echo $user['id']?>">
+                <button class="btn btn-danger">Delete</button>
+            </form>
         </div>
         <table class="table">
 

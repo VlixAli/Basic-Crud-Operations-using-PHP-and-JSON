@@ -4,7 +4,6 @@ include 'partials/header.php';
 
 require_once 'users/users.php';
 $user = [
-    'id'=>'',
     'name'=> '',
     'username' =>'',
     'email' => '',

@@ -26,15 +26,6 @@
         "website": "jacynthe.com",
         "extension": "jpg"
     },
-    "6": {
-        "id": 10,
-        "name": "Clementina DuBuque",
-        "username": "Moriah.Stanton",
-        "email": "Rey.Padberg@karina.biz",
-        "phone": "024-648-3804",
-        "website": "ambrose.net",
-        "extension": "PNG"
-    },
     "7": {
         "name": "Jerry Seinfeld",
         "username": "Jerry",
@@ -70,13 +61,5 @@
         "website": "kramer.com",
         "id": 1258893,
         "extension": "jpg"
-    },
-    "11": {
-        "name": "Chelsey Dietrich 2",
-        "username": "chelsey",
-        "email": "chelseyTow@example.com",
-        "phone": "21312315",
-        "website": "",
-        "id": 1726847
     }
 }
